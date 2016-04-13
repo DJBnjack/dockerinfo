@@ -6,7 +6,7 @@ app = Flask(__name__)
 @app.route('/')
 def info():
     outstr =  '<pre>'
-    for key in os.environ.keys():
+    for key in sorted(os.environ.keys()):
         outstr += "%50s %s \n" % (key,os.environ[key])
     return outstr + '</pre>'
 
